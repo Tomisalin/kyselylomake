@@ -14,9 +14,9 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import FootSec.bean.Match;
-import FootSec.dao.MatchRowMapper;
-import fi.hh.ohtu.kysely.bean.*;
+import fi.hh.ohtu.kysely.bean.AnswerClass;
+import fi.hh.ohtu.kysely.bean.QuestionClass;
+import fi.hh.ohtu.kysely.dao.QuestionDAO;
 
 @Repository
 public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
@@ -24,25 +24,15 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	@Inject
 	private JdbcTemplate jdbcTemplate;
 	
-	public List<Question> findALLQ(){
-		String sql = "select topic_name, question1, question2, question3, question4, question5 from questions";
-		RowMapper<Question> mapper = new QuestionRowMapper();
-		List<Question> questions = jdbcTemplate.query(sql, mapper);
-
-		return questions;
+	public JdbcTemplate getJdbcTemplate() {
+		return jdbcTemplate;
 	}
 	
-	public List<Answer> findALLA(){
-		
-		String sql = "select topic_name, answer1, answer2, answer3, answer4, answer5 from answer";
-		RowMapper<Answer> mapper = new AnswerRowMapper();
-		List<Answer> answers = jdbcTemplate.query(sql, mapper);
-
-		return answers;
-		
+	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
 	}
 	
-	public void save(Question q){
+	public void saveq(QuestionClass q) {
 		final String sql = "insert into questions(topic_name, question1, question2, question3, question4, question5) values(?,?,?,?,?,?)";
 		
 		final String topic = q.getTopic();
@@ -71,16 +61,14 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	    
 	
 	    q.setId(idHolder.getKey().intValue());
-				
-				
-				
-				)
+		
 	}
-	public void save(Answer a){
-	final String sql = "insert into answer(topic_name, answer1, answer2, answer3, answer4, answer5) values(?,?,?,?,?,?)";
+
+	public void savea(AnswerClass a) {
+final String sql = "insert into answer(topic_name, answer1, answer2, answer3, answer4, answer5) values(?,?,?,?,?,?)";
 		
 		final String topic = a.getTopic();
-		final String answer1 = a.getAnswer();
+		final String answer1 = a.getAnswer1();
 		final String answer2 = a.getAnswer2();
 		final String answer3 = a.getAnswer3();
 		final String answer4 = a.getAnswer4();
@@ -106,7 +94,24 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	
 	    a.setId(idHolder.getKey().intValue());
 	}
+
+		
 	
-	
-	
+
+	public List<QuestionClass> findAllQ() {
+		String sql = "select topic_name, question1, question2, question3, question4, question5 from questions";
+		RowMapper<QuestionClass> mapper = new QuestionRowMapper();
+		List<QuestionClass> questions = jdbcTemplate.query(sql, mapper);
+
+		return questions;
+	}
+
+	public List<AnswerClass> findAllA() {
+		String sql = "select topic_name, answer1, answer2, answer3, answer4, answer5 from answer";
+		RowMapper<AnswerClass> mapper = new AnswerRowMapper();
+		List<AnswerClass> answers = jdbcTemplate.query(sql, mapper);
+
+		return answers;
+		
+	}
 }

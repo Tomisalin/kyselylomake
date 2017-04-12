@@ -1,15 +1,16 @@
 package fi.hh.ohtu.kysely.dao;
 
-import fi.hh.ohtu.kysely.bean.*;
+import fi.hh.ohtu.kysely.bean.QuestionClass;
+import fi.hh.ohtu.kysely.bean.AnswerClass;
 import java.util.List;
 
 public interface QuestionDAO {
 
-	public abstract void saveq(Question question);
-	public abstract void savea(Answer answer);
+	public abstract void saveq(QuestionClass q);
+	public abstract void savea(AnswerClass a);
 	
-	public abstract List<Question> findAllQ();
-	public abstract List<Answer> findAllA();
+	public abstract List<QuestionClass> findAllQ();
+	public abstract List<AnswerClass> findAllA();
 	
 	//public abstract Question find(int question_id);
 	//public abstract Answer find(int answer_id);
