@@ -35,7 +35,7 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	public void saveq(QuestionClass q) {
 		final String sql = "insert into questions(topic_name, question1, question2, question3, question4, question5) values(?,?,?,?,?,?)";
 		
-		final String topic = q.getTopic();
+		final String topic_name = q.getTopic_name();
 		final String question1 = q.getQuestion1();
 		final String question2 = q.getQuestion2();
 		final String question3 = q.getQuestion3();
@@ -48,7 +48,7 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 				new PreparedStatementCreator() {
 	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 	    	            PreparedStatement ps = connection.prepareStatement(sql, new String[] {"question_id"});
-	    	            ps.setString(1, topic);
+	    	            ps.setString(1, topic_name);
 	    	            ps.setString(2, question1);
 	    	            ps.setString(3, question2);
 	    	            ps.setString(4, question3);
@@ -67,7 +67,7 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	public void savea(AnswerClass a) {
 final String sql = "insert into answer(topic_name, answer1, answer2, answer3, answer4, answer5) values(?,?,?,?,?,?)";
 		
-		final String topic = a.getTopic();
+		final String topic_name = a.getTopic_name();
 		final String answer1 = a.getAnswer1();
 		final String answer2 = a.getAnswer2();
 		final String answer3 = a.getAnswer3();
@@ -80,7 +80,7 @@ final String sql = "insert into answer(topic_name, answer1, answer2, answer3, an
 				new PreparedStatementCreator() {
 	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 	    	            PreparedStatement ps = connection.prepareStatement(sql, new String[] {"answer_id"});
-	    	            ps.setString(1, topic);
+	    	            ps.setString(1, topic_name);
 	    	            ps.setString(2, answer1);
 	    	            ps.setString(3, answer2);
 	    	            ps.setString(4, answer3);
@@ -99,7 +99,7 @@ final String sql = "insert into answer(topic_name, answer1, answer2, answer3, an
 	
 
 	public List<QuestionClass> findAllQ() {
-		String sql = "select * WHERE topic_name='Dining' ORDER BY question_id DESC LIMIT 1";
+		String sql = "SELECT * FROM questions WHERE topic_name='Dining' ORDER BY question_id DESC LIMIT 1";
 		RowMapper<QuestionClass> mapper = new QuestionRowMapper();
 		List<QuestionClass> questions = jdbcTemplate.query(sql, mapper);
 

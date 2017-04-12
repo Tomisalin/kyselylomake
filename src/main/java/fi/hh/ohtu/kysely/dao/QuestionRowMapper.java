@@ -13,7 +13,7 @@ public class QuestionRowMapper implements RowMapper<QuestionClass> {
 		
 		QuestionClass q = new QuestionImpl();
 		
-		q.setTopic(rs.getString("topic_name"));
+		q.setTopic_name(rs.getString("topic_name"));
 		q.setQuestion1(rs.getString("question1"));
 		q.setQuestion2(rs.getString("question2"));
 		q.setQuestion3(rs.getString("question3"));

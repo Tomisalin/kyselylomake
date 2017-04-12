@@ -9,5 +9,6 @@
 <body>
 <h1>TOIMIIKOHAN KERRANKIN</h1>
 <p>Voi veljet ku toimis kaikilla </p>
+<a href="diningform">Dining Form</a>
 </body>
 </html>

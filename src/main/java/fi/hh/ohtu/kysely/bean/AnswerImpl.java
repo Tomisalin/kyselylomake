@@ -3,7 +3,7 @@ package fi.hh.ohtu.kysely.bean;
 public class AnswerImpl implements AnswerClass {
 	
 	private int id;
-	private String topic;
+	private String topic_name;
 	private String answer1;
 	private String answer2;
 	private String answer3;
@@ -16,11 +16,11 @@ public class AnswerImpl implements AnswerClass {
 		this.id = id;
 	}
 	
-	public String getTopic() {
-		return topic;
+	public String getTopic_name() {
+		return topic_name;
 	}
-	public void setTopic(String topic) {
-		this.topic = topic;
+	public void setTopic_name(String topic_name) {
+		this.topic_name = topic_name;
 	}
 	public String getAnswer1() {
 		return answer1;
@@ -55,7 +55,7 @@ public class AnswerImpl implements AnswerClass {
 	
 	@Override
 	public String toString() {
-		return "AnswerImpl [id=" + id + ", topic=" + topic + ", answer1="
+		return "AnswerImpl [id=" + id + ", topic_name=" + topic_name + ", answer1="
 				+ answer1 + ", answer2=" + answer2 + ", answer3=" + answer3
 				+ ", answer4=" + answer4 + ", answer5=" + answer5 + "]";
 	}

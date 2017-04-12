@@ -13,7 +13,7 @@ public class AnswerRowMapper implements RowMapper<AnswerClass> {
 		
 		AnswerClass a = new AnswerImpl();
 		
-		a.setTopic(rs.getString("topic_name"));
+		a.setTopic_name(rs.getString("topic_name"));
 		a.setAnswer1(rs.getString("answer1"));
 		a.setAnswer2(rs.getString("answer2"));
 		a.setAnswer3(rs.getString("answer3"));

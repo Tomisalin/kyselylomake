@@ -6,8 +6,8 @@ public interface AnswerClass {
 		public abstract int getId();
 		public abstract void setId(int id);
 		
-		public abstract String getTopic();
-		public abstract void setTopic(String topic);
+		public abstract String getTopic_name();
+		public abstract void setTopic_name(String topic_name);
 		
 		public abstract String getAnswer1();
 		public abstract void setAnswer1(String answer1);
