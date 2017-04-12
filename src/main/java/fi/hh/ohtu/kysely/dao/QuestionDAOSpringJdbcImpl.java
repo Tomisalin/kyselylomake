@@ -99,7 +99,7 @@ final String sql = "insert into answer(topic_name, answer1, answer2, answer3, an
 	
 
 	public List<QuestionClass> findAllQ() {
-		String sql = "select topic_name, question1, question2, question3, question4, question5 from questions";
+		String sql = "select TOP 1 topic_name, question1, question2, question3, question4, question5 from questions WHERE topic_name='Dining' ORDER BY id DESC";
 		RowMapper<QuestionClass> mapper = new QuestionRowMapper();
 		List<QuestionClass> questions = jdbcTemplate.query(sql, mapper);
 
