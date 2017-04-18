@@ -14,8 +14,8 @@ import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
-import fi.hh.ohtu.kysely.bean.AnswerClass;
-import fi.hh.ohtu.kysely.bean.QuestionClass;
+import fi.hh.ohtu.kysely.bean.Answer;
+import fi.hh.ohtu.kysely.bean.Question;
 import fi.hh.ohtu.kysely.dao.QuestionDAO;
 
 @Repository
@@ -32,7 +32,7 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 	
-	public void saveq(QuestionClass q) {
+	public void saveq(Question q) {
 		final String sql = "insert into questions(topic_name, question1, question2, question3, question4, question5) values(?,?,?,?,?,?)";
 		
 		final String topic_name = q.getTopic_name();
@@ -64,10 +64,11 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 		
 	}
 
-	public void savea(AnswerClass a) {
-final String sql = "insert into answer(topic_name, answer1, answer2, answer3, answer4, answer5) values(?,?,?,?,?,?)";
+	public void savea(Answer a) {
+		final String sql = "insert into answers(topic_name, question_id, answer1, answer2, answer3, answer4, answer5) values(?,?,?,?,?,?,?)";
 		
 		final String topic_name = a.getTopic_name();
+		final int question_id = a.getQuestion_id();
 		final String answer1 = a.getAnswer1();
 		final String answer2 = a.getAnswer2();
 		final String answer3 = a.getAnswer3();
@@ -81,11 +82,12 @@ final String sql = "insert into answer(topic_name, answer1, answer2, answer3, an
 	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 	    	            PreparedStatement ps = connection.prepareStatement(sql, new String[] {"answer_id"});
 	    	            ps.setString(1, topic_name);
-	    	            ps.setString(2, answer1);
-	    	            ps.setString(3, answer2);
-	    	            ps.setString(4, answer3);
-	    	            ps.setString(5, answer4);
-	    	            ps.setString(6, answer5);
+	    	            ps.setInt(2, question_id);
+	    	            ps.setString(3, answer1);
+	    	            ps.setString(4, answer2);
+	    	            ps.setString(5, answer3);
+	    	            ps.setString(6, answer4);
+	    	            ps.setString(7, answer5);
 	    	           ;
 	    	            return ps;
 	    	        }
@@ -98,18 +100,18 @@ final String sql = "insert into answer(topic_name, answer1, answer2, answer3, an
 		
 	
 
-	public List<QuestionClass> findAllQ() {
+	public List<Question> findAllQ() {
 		String sql = "SELECT * FROM questions WHERE topic_name='Dining' ORDER BY question_id DESC LIMIT 1";
-		RowMapper<QuestionClass> mapper = new QuestionRowMapper();
-		List<QuestionClass> questions = jdbcTemplate.query(sql, mapper);
+		RowMapper<Question> mapper = new QuestionRowMapper();
+		List<Question> questions = jdbcTemplate.query(sql, mapper);
 
 		return questions;
 	}
 
-	public List<AnswerClass> findAllA() {
-		String sql = "select topic_name, answer1, answer2, answer3, answer4, answer5 from answer";
-		RowMapper<AnswerClass> mapper = new AnswerRowMapper();
-		List<AnswerClass> answers = jdbcTemplate.query(sql, mapper);
+	public List<Answer> findAllA() {
+		String sql = "select topic_name, question_id, answer1, answer2, answer3, answer4, answer5 from answers";
+		RowMapper<Answer> mapper = new AnswerRowMapper();
+		List<Answer> answers = jdbcTemplate.query(sql, mapper);
 
 		return answers;
 		

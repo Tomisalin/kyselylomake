@@ -1,6 +1,6 @@
 package fi.hh.ohtu.kysely.bean;
 
-public interface AnswerClass {
+public interface Answer {
 
 	
 		public abstract int getId();
@@ -8,6 +8,9 @@ public interface AnswerClass {
 		
 		public abstract String getTopic_name();
 		public abstract void setTopic_name(String topic_name);
+		
+		public abstract int getQuestion_id();
+		public abstract void setQuestion_id(int question_id);
 		
 		public abstract String getAnswer1();
 		public abstract void setAnswer1(String answer1);

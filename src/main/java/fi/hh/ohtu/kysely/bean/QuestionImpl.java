@@ -1,6 +1,6 @@
 package fi.hh.ohtu.kysely.bean;
 
-public class QuestionImpl implements QuestionClass {
+public class QuestionImpl implements Question {
 
 	private int id;
 	private String topic_name;

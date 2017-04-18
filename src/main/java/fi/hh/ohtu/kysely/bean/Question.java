@@ -1,6 +1,6 @@
 package fi.hh.ohtu.kysely.bean;
 
-public interface QuestionClass {
+public interface Question {
 
 	public abstract int getId();
 	public abstract void setId(int id);

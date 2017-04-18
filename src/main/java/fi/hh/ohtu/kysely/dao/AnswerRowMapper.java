@@ -7,13 +7,14 @@ import org.springframework.jdbc.core.RowMapper;
 
 import fi.hh.ohtu.kysely.bean.*;
 
-public class AnswerRowMapper implements RowMapper<AnswerClass> {
+public class AnswerRowMapper implements RowMapper<Answer> {
 	
-	public AnswerClass mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public Answer mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
-		AnswerClass a = new AnswerImpl();
+		Answer a = new AnswerImpl();
 		
 		a.setTopic_name(rs.getString("topic_name"));
+		a.setQuestion_id(rs.getInt("question_id"));
 		a.setAnswer1(rs.getString("answer1"));
 		a.setAnswer2(rs.getString("answer2"));
 		a.setAnswer3(rs.getString("answer3"));
@@ -26,3 +27,4 @@ public class AnswerRowMapper implements RowMapper<AnswerClass> {
 	}
 
 }
+ 

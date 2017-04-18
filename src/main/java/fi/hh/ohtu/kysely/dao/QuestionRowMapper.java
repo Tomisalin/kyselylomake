@@ -7,11 +7,11 @@ import org.springframework.jdbc.core.RowMapper;
 
 import fi.hh.ohtu.kysely.bean.*;
 
-public class QuestionRowMapper implements RowMapper<QuestionClass> {
+public class QuestionRowMapper implements RowMapper<Question> {
 	
-	public QuestionClass mapRow(ResultSet rs, int rowNum) throws SQLException {
+	public Question mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
-		QuestionClass q = new QuestionImpl();
+		Question q = new QuestionImpl();
 		
 		q.setTopic_name(rs.getString("topic_name"));
 		q.setQuestion1(rs.getString("question1"));

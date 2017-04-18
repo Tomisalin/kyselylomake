@@ -1,14 +1,16 @@
 package fi.hh.ohtu.kysely.bean;
 
-public class AnswerImpl implements AnswerClass {
+public class AnswerImpl implements Answer {
 	
 	private int id;
 	private String topic_name;
+	private int question_id;
 	private String answer1;
 	private String answer2;
 	private String answer3;
 	private String answer4;
 	private String answer5;
+	
 	public int getId() {
 		return id;
 	}
@@ -21,6 +23,13 @@ public class AnswerImpl implements AnswerClass {
 	}
 	public void setTopic_name(String topic_name) {
 		this.topic_name = topic_name;
+	}
+	
+	public int getQuestion_id() {
+		return question_id;
+	}
+	public void setQuestion_id(int question_id) {
+		this.question_id = question_id;
 	}
 	public String getAnswer1() {
 		return answer1;
@@ -52,13 +61,15 @@ public class AnswerImpl implements AnswerClass {
 	public void setAnswer5(String answer5) {
 		this.answer5 = answer5;
 	}
-	
 	@Override
 	public String toString() {
-		return "AnswerImpl [id=" + id + ", topic_name=" + topic_name + ", answer1="
-				+ answer1 + ", answer2=" + answer2 + ", answer3=" + answer3
+		return "AnswerImpl [id=" + id + ", topic_name=" + topic_name
+				+ ", question_id=" + question_id + ", answer1=" + answer1
+				+ ", answer2=" + answer2 + ", answer3=" + answer3
 				+ ", answer4=" + answer4 + ", answer5=" + answer5 + "]";
 	}
+	
+	
 	
 	
 	
