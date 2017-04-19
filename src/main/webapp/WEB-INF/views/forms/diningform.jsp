@@ -11,15 +11,16 @@
 <title></title>
 </head>
 <body>
-
-	<div>
-	<form:form method="post" modelAttribute ="answers">
-
-	<fieldset>
-
-	<button type="submit">Lähetä vastaukset!</button>
-	</fieldset>
-	</form:form>
+<div>
+	
+	<c:forEach items="${questions}" var="questions">
+	<p><c:out value="${questions.topic_name}" default="-----"/></p>
+	<p><c:out value="${questions.question1}" default="-----"/></p>
+	<p><c:out value="${questions.question2}" default="-----"/></p>
+	<p><c:out value="${questions.question3}" default="-----"/></p>
+	<p><c:out value="${questions.question4}" default="-----"/></p>	
+	<p><c:out value="${questions.question5}" default="-----"/></p>
+	</c:forEach>
 	</div>
 	
 	
