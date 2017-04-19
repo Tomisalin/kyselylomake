@@ -8,33 +8,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Diner is gucci</title>
+<title></title>
 </head>
 <body>
-<p>nakki</p>
 
-	
 	<div>
-	<c:forEach items="${questions}" var="questions">
-	<p><c:out value="${questions.topic_name}" default="-----"/></p>
-	<p><c:out value="${questions.question1}" default="-----"/></p>
-	<p><c:out value="${questions.question2}" default="-----"/></p>
-	<p><c:out value="${questions.question3}" default="-----"/></p>
-	<p><c:out value="${questions.question4}" default="-----"/></p>
-	<p><c:out value="${questions.question5}" default="-----"/></p>
-	</c:forEach>
+	<form:form method="post" modelAttribute ="answers">
+
+	<fieldset>
+
+	<button type="submit">Lähetä vastaukset!</button>
+	</fieldset>
+	</form:form>
 	</div>
 	
 	
-		<form:form method="post" modelAttribute ="answers">
-				<fieldset>
-				<legend>Vastaukset</legend>
-				
-				
-				<button type="submit">Lähetä vastaukset!</button>
-				</fieldset>
 		
-		</form:form>
+			
+		
+				
+			
+				
+		
+
 
 
 </body>

@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +24,14 @@ import fi.hh.ohtu.kysely.dao.QuestionDAO;
 public class QuestionController {
 	@Inject
 	QuestionDAO dao;
+	
+	public QuestionDAO getDAO(){
+		return dao;
+	}
+	
+	public void setDao(QuestionDAO dao) {
+		this.dao = dao;
+	}
 
 	
 	@RequestMapping(value="ruokailu", method=RequestMethod.GET)
@@ -39,11 +48,11 @@ public class QuestionController {
 		
 		model.addAttribute("answers", emptyAnswer);
 		return "forms/diningform";
-	}
+	}	
 	
 	@RequestMapping(value="ruokailu", method=RequestMethod.POST)
-	public String create( @ModelAttribute("answers") AnswerImpl answers) {
+	public String create( @ModelAttribute(value="answers") AnswerImpl answers) {
 		dao.savea(answers);
-		return "forms/diningform";
+		return "thanksman";
 	}
 }

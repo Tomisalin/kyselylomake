@@ -1,0 +1,24 @@
+<body>
+
+	<div>
+	<form:form method="post" modelAttribute ="answers">
+	<c:forEach items="${questions}" var="questions">
+	<p><c:out value="${questions.topic_name}" default="-----"/></p>
+	<fieldset>
+	<p><c:out value="${questions.question1}" default="-----"/></p>
+	<form:label	path="answer1"></form:label><br/>
+					<form:input path="answer1"/>
+	<p><c:out value="${questions.question2}" default="-----"/></p>
+	
+	<p><c:out value="${questions.question3}" default="-----"/></p>
+	
+	<p><c:out value="${questions.question4}" default="-----"/></p>
+	
+	<p><c:out value="${questions.question5}" default="-----"/></p>
+	<button type="submit">Lähetä vastaukset!</button>
+	</fieldset>
+	</c:forEach>
+	</form:form>
+	</div>
+	
+</body>
