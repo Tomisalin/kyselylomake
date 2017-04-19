@@ -43,8 +43,10 @@
 	<form:radiobutton path="answer5" value="4"/>4
 	<form:radiobutton path="answer5" value="5"/>5
 	<form:radiobutton path="answer5" value="I don't know"/>I don't know
-	<form:hidden path="question_id" value="2" />
-	<form:hidden path="topic_name" value="Dining" />
+
+
+	<form:hidden path="question_id" value="${questions.id}" />
+	<form:hidden path="topic_name" value="${questions.topic_name}" />
 	<br><br><br>
 	<button type="submit">Lähetä vastaukset!</button>
 	</fieldset>

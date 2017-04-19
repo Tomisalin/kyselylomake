@@ -12,7 +12,7 @@ public class QuestionRowMapper implements RowMapper<Question> {
 	public Question mapRow(ResultSet rs, int rowNum) throws SQLException {
 		
 		Question q = new QuestionImpl();
-		
+		q.setId(rs.getInt("question_id"));
 		q.setTopic_name(rs.getString("topic_name"));
 		q.setQuestion1(rs.getString("question1"));
 		q.setQuestion2(rs.getString("question2"));
