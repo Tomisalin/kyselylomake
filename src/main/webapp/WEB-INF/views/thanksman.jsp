@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>ty</title>
+<title>Kiitoksia</title>
 </head>
 <body>
 <h1>THANK YOU VERY MANY</h1>
-<h2>TEN DOLLA NEXT LOUND</h2>
+<a href="../">Etusivulle</a>
 </body>
 </html>

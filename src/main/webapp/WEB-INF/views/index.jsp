@@ -4,11 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>School forms</title>
 </head>
 <body>
-<h1>TOIMIIKOHAN KERRANKIN</h1>
-<p>Voi veljet ku toimis kaikilla </p>
+<h1>Ruokailu kyselysettii</h1>
 <a href="lomake/ruokailu">Dining Form</a>
 </body>
 </html>
