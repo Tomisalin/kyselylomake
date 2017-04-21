@@ -57,5 +57,23 @@ public class QuestionController {
 		dao.savea(answers);
 		return "thanksman";
 	}
+	
+	@RequestMapping(value="ruokailu.json")
+	public @ResponseBody List<Question> getQuestions() {
+	
+		List<Question> questions = dao.findAllQ();
+	
+		return questions;
+	}
+	
+	@RequestMapping(value="ruokailua.json")
+	public @ResponseBody List<Answer> getAnswers() {
+	
+		List<Answer> answers = dao.findAllA();
+	
+		return answers;
+	}
+	
+	
 
 }
