@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 
 import fi.hh.ohtu.kysely.bean.Answer;
 import fi.hh.ohtu.kysely.bean.Question;
+import fi.hh.ohtu.kysely.bean.Option;
 import fi.hh.ohtu.kysely.dao.QuestionDAO;
 
 @Repository
@@ -33,14 +34,12 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	}
 	
 	public void saveq(Question q) {
-		final String sql = "insert into questions(topic_name, question1, question2, question3, question4, question5) values(?,?,?,?,?,?)";
+		final String sql = "insert into question(survey_id, type_name, question) values(?,?,?)";
 		
-		final String topic_name = q.getTopic_name();
-		final String question1 = q.getQuestion1();
-		final String question2 = q.getQuestion2();
-		final String question3 = q.getQuestion3();
-		final String question4 = q.getQuestion4();
-		final String question5 = q.getQuestion5();
+		final int survey_id = q.getSurvey_id();
+		final String type_name = q.getType_name();
+		final String question = q.getQuestion();
+	
 		
 		KeyHolder idHolder = new GeneratedKeyHolder();
 		
@@ -48,19 +47,17 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 				new PreparedStatementCreator() {
 	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 	    	            PreparedStatement ps = connection.prepareStatement(sql, new String[] {"question_id"});
-	    	            ps.setString(1, topic_name);
-	    	            ps.setString(2, question1);
-	    	            ps.setString(3, question2);
-	    	            ps.setString(4, question3);
-	    	            ps.setString(5, question4);
-	    	            ps.setString(6, question5);
+	    	            ps.setInt(1, survey_id);
+	    	            ps.setString(2, type_name);
+	    	            ps.setString(3, question);
+	    	      
 	    	           ;
 	    	            return ps;
 	    	        }
 	    	    }, idHolder);
 	    
 	
-	    q.setId(idHolder.getKey().intValue());
+	    q.setQuestion_id(idHolder.getKey().intValue());
 		
 	}
 
@@ -101,11 +98,19 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	
 
 	public List<Question> findAllQ() {
-		String sql = "SELECT * FROM questions WHERE topic_name='Dining' ORDER BY question_id DESC LIMIT 1";
+		String sql = "SELECT * FROM question";
 		RowMapper<Question> mapper = new QuestionRowMapper();
 		List<Question> questions = jdbcTemplate.query(sql, mapper);
 
 		return questions;
+	}
+	
+	public List<Option> findAllO() {
+		/*String sql = "SELECT * FROM option_choice";
+		RowMapper<Option> mapper = new QuestionRowMapper();
+		List<Option> options = jdbcTemplate.query(sql, mapper);
+		 */
+		return null;
 	}
 
 	public List<Answer> findAllA() {
