@@ -16,12 +16,7 @@ public class QuestionRowMapper implements RowMapper<Question> {
 		q.setSurvey_id(rs.getInt("survey_id"));
 		q.setType_name(rs.getString("type_name"));
 		q.setQuestion(rs.getString("question"));
-		
-
-		
-		return q;
-		
-		
+		return q;	
 	}
 
 }

@@ -10,7 +10,6 @@ public interface QuestionDAO {
 	
 	public abstract List<Question> findAllQ();
 
-	
 	//public abstract Question find(int question_id);
 	//public abstract Answer find(int answer_id);
 	
