@@ -29,7 +29,7 @@ public class QuestionController {
 	@RequestMapping(value="ruokailu.json")
 	public @ResponseBody List<Question> getQuestions() {
 	
-		List<Question> questions = dao.findAllQ();
+		List<Question> questions = dao.allQuestions();
 	
 		return questions;
 	}

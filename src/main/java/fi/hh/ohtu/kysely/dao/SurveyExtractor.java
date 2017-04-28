@@ -12,14 +12,17 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import fi.hh.ohtu.kysely.bean.Question;
 import fi.hh.ohtu.kysely.bean.Survey;
 
-private class SurveyExtractor implements ResultSetExtractor {
+public class SurveyExtractor implements ResultSetExtractor {
 	
+	
+
 	public Object extractData(ResultSet rs) throws SQLException, DataAccessException {
-		Map<Integer, Survey> map = new HashMap<Integer, Survey>();
-		Survey survey=null;
+/*		//Map<Integer, Survey> map = new HashMap<Integer, Survey>();
+		ArrayList<Survey> surveys = new ArrayList<Survey>();
+		Survey survey = null;
 		while (rs.next()){
 			Integer id= rs.getInt("survey_id");
-			survey= map.get(id);
+			survey= surveys.get(id);
 			if(survey == null) {
 				String surveyname = rs.getString("survey_name");
 				survey = new Survey(id, surveyname);
@@ -29,6 +32,8 @@ private class SurveyExtractor implements ResultSetExtractor {
 			survey.add(question);
 		}
 		return new ArrayList<Survey>(map.values());
+		*/
+		return null;
 	}
 	
 

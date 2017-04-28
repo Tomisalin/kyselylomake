@@ -59,7 +59,19 @@ public class QuestionImpl implements Question {
 				+ survey_id + ", type_name=" + type_name + ", question="
 				+ question + ", options=" + options + "]";
 	}
+	public QuestionImpl(int question_id, int survey_id, String type_name,
+			String question) {
+		super();
+		this.question_id = question_id;
+		this.survey_id = survey_id;
+		this.type_name = type_name;
+		this.question = question;
+
+	}
 	
+	public QuestionImpl() {
+		super();
+	}
 	
 	
 	

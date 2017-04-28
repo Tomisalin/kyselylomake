@@ -30,6 +30,12 @@ public class OptionImpl implements Option {
 		return "OptionImpl [option_id=" + option_id + ", question_id="
 				+ question_id + ", optionchoice=" + optionchoice + "]";
 	}
+	public OptionImpl(int option_id, int question_id, String optionchoice) {
+		super();
+		this.option_id = option_id;
+		this.question_id = question_id;
+		this.optionchoice = optionchoice;
+	}
 	
 	
 	

@@ -8,4 +8,5 @@ public interface SurveyDAO {
 	
 	public abstract List<Survey> allSurveys();
 	
+	
 }
