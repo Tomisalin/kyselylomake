@@ -1,12 +1,15 @@
 package fi.hh.ohtu.kysely.bean;
 
+import java.util.ArrayList;
+
+
 public class QuestionImpl implements Question {
 	
 	private int question_id;
 	private int survey_id;
 	private String type_name;
 	private String question;
-	
+	private ArrayList<Option> options= new ArrayList<Option>();
 	
 
 	
@@ -36,10 +39,25 @@ public class QuestionImpl implements Question {
 		this.question = question;
 	}
 	
+	public ArrayList<Option> getOptions() {
+		return options;
+	}
+	public void setOptions(ArrayList<Option> options) {
+		this.options = options;
+	}
+	
+	//LISÄÄ ADD METODI, JOLLA LISÄTÄÄN VAIHTOEHTOJA
+	public void add(Option option) {
+		if (option != null) {
+		this.options.add(option);
+	}
+	}
+	
 	@Override
 	public String toString() {
 		return "QuestionImpl [question_id=" + question_id + ", survey_id="
-				+ survey_id + ", type_name=" + type_name + ", + , question=" + question + "]";
+				+ survey_id + ", type_name=" + type_name + ", question="
+				+ question + ", options=" + options + "]";
 	}
 	
 	

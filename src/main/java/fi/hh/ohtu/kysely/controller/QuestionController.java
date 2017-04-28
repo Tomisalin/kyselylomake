@@ -32,32 +32,7 @@ public class QuestionController {
 	public void setDao(QuestionDAO dao) {
 		this.dao = dao;
 	}
-/*
-	//QUESTIONS FROM DATABASE
-	@RequestMapping(value="ruokailu", method=RequestMethod.GET)
-	public String getDetails(Model model){
-		List<Question> questions = dao.findAllQ();
-		model.addAttribute("questions", questions);
-		return "forms/diningform";		
-	}
-	*/
-	//CREATING FORM
-	@RequestMapping(value="ruokailu", method=RequestMethod.GET)
-	public String getCreateForm(Model model) {
-		Answer emptyAnswer = new AnswerImpl();
-		List<Question> questions = dao.findAllQ();
-		model.addAttribute("questions", questions);
-		model.addAttribute("answers", emptyAnswer);
-		return "forms/diningform";
-	}
-	
-	//SAVING ANSWERS
-	@RequestMapping(value="ruokailu", method=RequestMethod.POST)
-	public String create( @ModelAttribute(value="answers") AnswerImpl answers) {
-		dao.savea(answers);
-		return "thanksman";
-	}
-	
+
 	@RequestMapping(value="ruokailu.json")
 	public @ResponseBody List<Question> getQuestions() {
 	
@@ -66,13 +41,7 @@ public class QuestionController {
 		return questions;
 	}
 	
-	@RequestMapping(value="ruokailua.json")
-	public @ResponseBody List<Answer> getAnswers() {
 	
-		List<Answer> answers = dao.findAllA();
-	
-		return answers;
-	}
 	
 	
 
