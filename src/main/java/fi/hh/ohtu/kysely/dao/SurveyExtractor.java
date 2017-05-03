@@ -2,39 +2,50 @@ package fi.hh.ohtu.kysely.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.ResultSetExtractor;
-
+import fi.hh.ohtu.kysely.bean.Option;
+import fi.hh.ohtu.kysely.bean.OptionImpl;
 import fi.hh.ohtu.kysely.bean.Question;
+import fi.hh.ohtu.kysely.bean.QuestionImpl;
 import fi.hh.ohtu.kysely.bean.Survey;
+import fi.hh.ohtu.kysely.bean.SurveyImpl;
 
-public class SurveyExtractor implements ResultSetExtractor {
-	
-	
+public class SurveyExtractor implements ResultSetExtractor<Survey> {
 
-	public Object extractData(ResultSet rs) throws SQLException, DataAccessException {
-/*		//Map<Integer, Survey> map = new HashMap<Integer, Survey>();
-		ArrayList<Survey> surveys = new ArrayList<Survey>();
+	public Survey extractData(ResultSet rs) throws SQLException,
+			DataAccessException {
 		Survey survey = null;
-		while (rs.next()){
-			Integer id= rs.getInt("survey_id");
-			survey= surveys.get(id);
-			if(survey == null) {
-				String surveyname = rs.getString("survey_name");
-				survey = new Survey(id, surveyname);
-				map.put(id,  survey);
+		Question question = null;
+		int surveyPrevId = 0;
+		int surveyCurrentId = 0;
+		int questionCurrentId = 0;
+		int questionPrevId = 0;
+		String typename = "";
+		while (rs.next()) {
+			surveyCurrentId = rs.getInt("survey_id");
+			if (surveyCurrentId != surveyPrevId) {
+				survey = new SurveyImpl(rs.getInt("survey_id"),
+						rs.getString("survey_name"), rs.getInt("topic_id"));
+				surveyPrevId = surveyCurrentId;
 			}
-			Question question= new Question(rs.getString("question"));
-			survey.add(question);
+			questionCurrentId = rs.getInt("question_id");
+			if (questionCurrentId != questionPrevId) {
+				question = new QuestionImpl(rs.getInt("question_id"),
+						rs.getInt("survey_id"), rs.getString("type_name"),
+						rs.getString("question"));
+				questionPrevId = questionCurrentId;
+				survey.add(question);
+			}
+			typename = rs.getString("type_name");
+			if (typename.equals("Multichoice")) {
+				Option option = new OptionImpl(rs.getInt("option_id"),
+						rs.getInt("question_id"),
+						rs.getString("optionchoice"));
+				question.add(option);
+			}
 		}
-		return new ArrayList<Survey>(map.values());
-		*/
-		return null;
+		return survey;
 	}
-	
 
 }

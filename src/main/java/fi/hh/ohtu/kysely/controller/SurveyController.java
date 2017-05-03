@@ -1,6 +1,6 @@
 package fi.hh.ohtu.kysely.controller;
 
-import java.util.List;
+
 
 import javax.inject.Inject;
 
@@ -25,10 +25,8 @@ public class SurveyController {
 	}
 
 	@RequestMapping(value="kysely.json")
-	public @ResponseBody List<Survey> getSurveys() {
-	
-		List<Survey> surveys = dao.allSurveys();
-	
-		return surveys;
+	public @ResponseBody Survey getSurvey() {
+		Survey survey = dao.getSurvey();
+		return survey;
 	}
 }

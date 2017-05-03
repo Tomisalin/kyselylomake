@@ -6,7 +6,7 @@ import fi.hh.ohtu.kysely.bean.*;
 
 public interface SurveyDAO {
 	
-	public abstract List<Survey> allSurveys();
+	public abstract Survey getSurvey();
 	
 	
 }

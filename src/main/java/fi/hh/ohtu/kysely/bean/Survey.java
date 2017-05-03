@@ -11,5 +11,7 @@ public interface Survey {
 	public abstract int getTopic_id();
 	public abstract void setTopic_id(int topic_id);
 	
+	public void add(Question question);
+	
 	
 }

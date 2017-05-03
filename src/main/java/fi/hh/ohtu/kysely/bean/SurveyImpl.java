@@ -48,6 +48,20 @@ public class SurveyImpl implements Survey {
 				+ survey_name + ", topic_id=" + topic_id + ", questions="
 				+ questions + "]";
 	}
+	public SurveyImpl(int survey_id, String survey_name, int topic_id) {
+		super();
+		this.survey_id = survey_id;
+		this.survey_name = survey_name;
+		this.topic_id = topic_id;
+	}
+	public SurveyImpl() {
+		super();
+	}
+	
+	
+	
+	
+	
 	
 	
 	
