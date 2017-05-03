@@ -1,13 +1,12 @@
 CREATE TABLE topic (
-topic_id 	INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-topic_name 	VARCHAR(255) NOT NULL
+topic_name 	VARCHAR(255) NOT NULL PRIMARY KEY
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE survey (
 survey_id 	INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 survey_name 	VARCHAR (255),
-topic_id 	INT NOT NULL,
-FOREIGN KEY (topic_id) REFERENCES topic (topic_id)
+topic_name 	VARCHAR(255) NOT NULL,
+FOREIGN KEY (topic_name) REFERENCES topic (topic_name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE question_type (

@@ -26,7 +26,7 @@ public class SurveyExtractor implements ResultSetExtractor<Survey> {
 			surveyCurrentId = rs.getInt("survey_id");
 			if (surveyCurrentId != surveyPrevId) {
 				survey = new SurveyImpl(rs.getInt("survey_id"),
-						rs.getString("survey_name"), rs.getInt("topic_id"));
+						rs.getString("survey_name"), rs.getString("topic_name"));
 				surveyPrevId = surveyCurrentId;
 			}
 			questionCurrentId = rs.getInt("question_id");

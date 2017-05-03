@@ -1,12 +1,12 @@
 INSERT INTO topic
-	(topic_id,topic_name)
+	(topic_name)
 VALUES 
-	(1,'Ruokailu');
+	('Ruokailu');
 
 INSERT INTO survey 
-	(survey_id, survey_name , topic_id)
+	(survey_id, survey_name , topic_name)
 VALUES
-	(1,'Ruokailu toukokuussa 2017',1);
+	(1,'Ruokailu toukokuussa 2017','Ruokailu');
 
 INSERT INTO question_type
 	(type_name)
