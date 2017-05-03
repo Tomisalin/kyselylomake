@@ -33,10 +33,10 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	
 	public List<Question> allQuestions(){
 		String sql = "SELECT  * FROM survey LEFT OUTER JOIN question USING (survey_id) LEFT OUTER JOIN option_choice USING (question_id)";
-		QuestionExtractor extractor = new QuestionExtractor();
-		List<Question> questions = jdbcTemplate.query(sql, extractor);
+		//QuestionExtractor extractor = new QuestionExtractor();
+		//List<Question> questions = jdbcTemplate.query(sql, extractor);
 
-		return questions;
+		return jdbcTemplate.query(sql, new QuestionExtractor());
 	}
 
 }
