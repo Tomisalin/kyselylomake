@@ -10,7 +10,7 @@ VALUES
 
 INSERT INTO question_type
 	(type_name)
-VALUES ('multichoice');
+VALUES ('Multichoice');
 
 INSERT INTO question_type
 	(type_name)
