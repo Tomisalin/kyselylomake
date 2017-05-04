@@ -43,8 +43,9 @@ FOREIGN KEY (question_id) REFERENCES question (question_id)
 
 CREATE TABLE answer_multichoice (
 answer_id 		INT NOT NULL,
-answer_multichoice 	INT,
-question_id 		INT NOT NULL,
+option_id	 	INT,
+question_id 	INT NOT NULL,
+FOREIGN KEY (option_id) REFERENCES option_choice (option_id),
 FOREIGN KEY (answer_id) REFERENCES answer (answer_id),
 FOREIGN KEY (question_id) REFERENCES question (question_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

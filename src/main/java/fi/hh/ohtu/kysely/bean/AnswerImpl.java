@@ -2,75 +2,51 @@ package fi.hh.ohtu.kysely.bean;
 
 public class AnswerImpl implements Answer {
 	
-	private int id;
-	private String topic_name;
+	private int answer_id;
 	private int question_id;
-	private String answer1;
-	private String answer2;
-	private String answer3;
-	private String answer4;
-	private String answer5;
-	
-	public int getId() {
-		return id;
+	private int option_id;
+	private String answer_text;
+	public int getAnswer_id() {
+		return answer_id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setAnswer_id(int answer_id) {
+		this.answer_id = answer_id;
 	}
-	
-	public String getTopic_name() {
-		return topic_name;
-	}
-	public void setTopic_name(String topic_name) {
-		this.topic_name = topic_name;
-	}
-	
 	public int getQuestion_id() {
 		return question_id;
 	}
 	public void setQuestion_id(int question_id) {
 		this.question_id = question_id;
 	}
-	public String getAnswer1() {
-		return answer1;
+	public int getOption_id() {
+		return option_id;
 	}
-	public void setAnswer1(String answer1) {
-		this.answer1 = answer1;
+	public void setOption_id(int option_id) {
+		this.option_id = option_id;
 	}
-	public String getAnswer2() {
-		return answer2;
+	public String getAnswer_text() {
+		return answer_text;
 	}
-	public void setAnswer2(String answer2) {
-		this.answer2 = answer2;
-	}
-	public String getAnswer3() {
-		return answer3;
-	}
-	public void setAnswer3(String answer3) {
-		this.answer3 = answer3;
-	}
-	public String getAnswer4() {
-		return answer4;
-	}
-	public void setAnswer4(String answer4) {
-		this.answer4 = answer4;
-	}
-	public String getAnswer5() {
-		return answer5;
-	}
-	public void setAnswer5(String answer5) {
-		this.answer5 = answer5;
+	public void setAnswer_text(String answer_text) {
+		this.answer_text = answer_text;
 	}
 	@Override
 	public String toString() {
-		return "AnswerImpl [id=" + id + ", topic_name=" + topic_name
-				+ ", question_id=" + question_id + ", answer1=" + answer1
-				+ ", answer2=" + answer2 + ", answer3=" + answer3
-				+ ", answer4=" + answer4 + ", answer5=" + answer5 + "]";
+		return "AnswerImpl [answer_id=" + answer_id + ", question_id="
+				+ question_id + ", option_id=" + option_id + ", answer_text="
+				+ answer_text + "]";
 	}
+	public AnswerImpl(int answer_id, int question_id, int option_id,
+			String answer_text) {
+		super();
+		this.answer_id = answer_id;
+		this.question_id = question_id;
+		this.option_id = option_id;
+		this.answer_text = answer_text;
+	}
+	public AnswerImpl() {
 	
-	
-	
+	}
 	
 	
 	

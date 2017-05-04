@@ -13,14 +13,9 @@ public class AnswerRowMapper implements RowMapper<Answer> {
 		
 		Answer a = new AnswerImpl();
 		
-		a.setTopic_name(rs.getString("topic_name"));
 		a.setQuestion_id(rs.getInt("question_id"));
-		a.setAnswer1(rs.getString("answer1"));
-		a.setAnswer2(rs.getString("answer2"));
-		a.setAnswer3(rs.getString("answer3"));
-		a.setAnswer4(rs.getString("answer4"));
-		a.setAnswer5(rs.getString("answer5"));
-		
+		a.setOption_id(rs.getInt("option_id"));
+		a.setAnswer_text(rs.getString("answer_text"));
 		return a;
 		
 		

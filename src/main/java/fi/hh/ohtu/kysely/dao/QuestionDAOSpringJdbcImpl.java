@@ -38,5 +38,9 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 
 		return jdbcTemplate.query(sql, new QuestionExtractor());
 	}
+	
+	
+	
+	
 
 }
