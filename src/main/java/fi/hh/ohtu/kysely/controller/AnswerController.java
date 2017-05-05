@@ -3,6 +3,8 @@ package fi.hh.ohtu.kysely.controller;
 
 import javax.inject.Inject;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -39,9 +41,9 @@ public class AnswerController {
 	}*/
 	
 	@RequestMapping(value="vastaus", method=RequestMethod.POST)
-	public String create( @ModelAttribute(value="answer") AnswerImpl answer) {
+	public ResponseEntity<AnswerImpl> createAnswer( @RequestBody AnswerImpl answer) {
 		dao.saveAnswer(answer);
-		return "kysely/lomake";
+		return new ResponseEntity<AnswerImpl>(answer, HttpStatus.OK);
 	}
 	
 
