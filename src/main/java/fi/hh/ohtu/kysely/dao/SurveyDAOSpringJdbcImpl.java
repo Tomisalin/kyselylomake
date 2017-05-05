@@ -27,7 +27,6 @@ public class SurveyDAOSpringJdbcImpl implements SurveyDAO {
 
 	public Survey getSurvey() {
 		String sql = "SELECT  * FROM survey LEFT OUTER JOIN question USING (survey_id) LEFT OUTER JOIN option_choice USING (question_id)";
-	
 		return jdbcTemplate.query(sql, new SurveyExtractor());
 	}
 
