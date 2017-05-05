@@ -6,6 +6,8 @@ public class AnswerImpl implements Answer {
 	private int question_id;
 	private int option_id;
 	private String answer_text;
+	
+	
 	public int getAnswer_id() {
 		return answer_id;
 	}
