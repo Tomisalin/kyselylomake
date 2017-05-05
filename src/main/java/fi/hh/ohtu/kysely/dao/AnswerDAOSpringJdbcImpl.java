@@ -30,7 +30,7 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 
 	
 	public Answer saveAnswer(Answer a) {
-		final String sql = "insert into answer(answer_id, option_id ,answer_text, question_id) values(?,?,?,?)";
+		final String sql = "insert into answer (answer_id, option_id ,answer_text, question_id) values(?,?,?,?)";
 		
 		
 		final int answer_id = a.getAnswer_id();
@@ -43,13 +43,13 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 		jdbcTemplate.update(
 				new PreparedStatementCreator() {
 	    	        public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-	    	            PreparedStatement ps = connection.prepareStatement(sql, new String[] {"answer_id"});
+	    	            PreparedStatement ps = connection.prepareStatement(sql);
 	    	            
 	    	            ps.setInt(1, answer_id);
 	    	            ps.setInt(2, option_id);
 	    	            ps.setString(3, answer_text);
 	    	            ps.setInt(4, question_id);
-	    	    
+	    	         
 	    	           ;
 	    	            return ps;
 	    	        }
