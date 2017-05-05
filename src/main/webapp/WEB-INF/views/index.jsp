@@ -9,5 +9,97 @@
 <body>
 <h1>Ruokailu kyselysettii</h1>
 <a href="lomake/ruokailu">Dining Form</a>
+
+<h2>Kyselyiden haku JSON GET</h2>
+<b>http://proto317.haaga-helia.fi:8080/kysely/kysymykset/kysely.json</b>
+
+<div style="word-wrap: break-word; white-space: -moz-pre-wrap; white-space: pre-wrap; ">
+{
+  "survey_id": 1,
+  "survey_name": "Ruokailu toukokuussa 2017",
+  "topic_name": "Ruokailu",
+  "questions": [
+    {
+      "question_id": 1,
+      "survey_id": 1,
+      "type_name": "Textbox",
+      "question": "Arvioi viikon ruoat omin sanoin",
+      "options": []
+    },
+    {
+      "question_id": 2,
+      "survey_id": 1,
+      "type_name": "Multichoice",
+      "question": "Oliko ruoka hyv‰‰ t‰n‰‰n?",
+      "options": [
+        {
+          "option_id": 1,
+          "question_id": 2,
+          "optionchoice": "Kyll‰"
+        },
+        {
+          "option_id": 2,
+          "question_id": 2,
+          "optionchoice": "Ei"
+        }
+      ]
+    },
+    {
+      "question_id": 3,
+      "survey_id": 1,
+      "type_name": "Multichoice",
+      "question": "Arvioi tiistain ruoka (1-5)",
+      "options": [
+        {
+          "option_id": 3,
+          "question_id": 3,
+          "optionchoice": "1"
+        },
+        {
+          "option_id": 4,
+          "question_id": 3,
+          "optionchoice": "2"
+        },
+        {
+          "option_id": 5,
+          "question_id": 3,
+          "optionchoice": "3"
+        },
+        {
+          "option_id": 6,
+          "question_id": 3,
+          "optionchoice": "4"
+        },
+        {
+          "option_id": 7,
+          "question_id": 3,
+          "optionchoice": "5"
+        }
+      ]
+    }
+  ]
+}
+</div>
+
+<h2>Vastausten haku JSON POST - esimerkit multichoicelle ja tekstivastaukselle</h2>
+<b>http://proto317.haaga-helia.fi:8080/kysely/vastaukset/vastaus.json</b>
+<p>Huom: T‰ll‰ toteutuksella saa toistaiseksi l‰hetetty‰ vain yhden vastauksen kerrallaan.</p>
+
+<div style="word-wrap: break-word; white-space: -moz-pre-wrap; white-space: pre-wrap; ">
+{
+"answer_id": 1,
+"option_id": 2,
+"answer_text": "",
+"question_id" : 2
+}
+
+{
+"answer_id": 2,
+"option_id": 8,     (t‰ll‰ hetkell‰ tietokannassa option_id: 8 tarkoittaa "ei vaihtoehtoja")
+"answer_text": "Ruoka oli erinomaista",
+"question_id" : 1
+}
+</div>
+
 </body>
 </html>
