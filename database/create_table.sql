@@ -30,12 +30,7 @@ FOREIGN KEY (question_id) REFERENCES question (question_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE answer (
-answer_id 		INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-option_id	 	INT NOT NULL,
-answer_text 	VARCHAR(255),
-question_id 	INT NOT NULL,
-FOREIGN KEY (option_id) REFERENCES option_choice (option_id),
-FOREIGN KEY (question_id) REFERENCES question (question_id)
+answer_id 		INT NOT NULL AUTO_INCREMENT PRIMARY KEY
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE answer_text (
