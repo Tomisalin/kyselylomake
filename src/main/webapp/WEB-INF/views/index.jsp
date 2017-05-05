@@ -18,7 +18,7 @@
   "survey_id": 1,
   "survey_name": "Ruokailu toukokuussa 2017",
   "topic_name": "Ruokailu",
-  "questions": []
+  "questions": [
     {
       "question_id": 1,
       "survey_id": 1,
