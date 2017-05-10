@@ -5,6 +5,6 @@ import fi.hh.ohtu.kysely.bean.*;
 
 public interface SurveyDAO {
 	
-	public abstract Survey getSurvey();
+	public abstract Survey getSurvey(String topic_name);
 	
 }
