@@ -25,13 +25,13 @@ public class QuestionImpl implements Question {
 	public void setSurvey_id(int survey_id) {
 		this.survey_id = survey_id;
 	}
+	
 	public String getType_name() {
 		return type_name;
 	}
 	public void setType_name(String type_name) {
 		this.type_name = type_name;
 	}
-
 	public String getQuestion() {
 		return question;
 	}
@@ -53,12 +53,6 @@ public class QuestionImpl implements Question {
 	}
 	}
 	
-	@Override
-	public String toString() {
-		return "QuestionImpl [question_id=" + question_id + ", survey_id="
-				+ survey_id + ", type_name=" + type_name + ", question="
-				+ question + ", options=" + options + "]";
-	}
 	public QuestionImpl(int question_id, int survey_id, String type_name,
 			String question) {
 		super();
@@ -69,6 +63,12 @@ public class QuestionImpl implements Question {
 
 	}
 	
+	@Override
+	public String toString() {
+		return "QuestionImpl [question_id=" + question_id + ", survey_id="
+				+ survey_id + ", type_name=" + type_name + ", question="
+				+ question + ", options=" + options + "]";
+	}
 	public QuestionImpl() {
 		super();
 	}

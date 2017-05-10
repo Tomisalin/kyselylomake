@@ -38,7 +38,7 @@ public class SurveyExtractor implements ResultSetExtractor<Survey> {
 				survey.add(question);
 			}
 			typename = rs.getString("type_name");
-			if (typename.equals("Multichoice")) {
+			if (!typename.equals("Textbox")) {
 				Option option = new OptionImpl(rs.getInt("option_id"),
 						rs.getString("type_name"),
 						rs.getString("optionchoice"));

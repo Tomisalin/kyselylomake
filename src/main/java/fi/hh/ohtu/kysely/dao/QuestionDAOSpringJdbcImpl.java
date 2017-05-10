@@ -24,7 +24,7 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	}
 
 	public List<Question> findAllQ() {
-		String sql = "SELECT  * FROM survey LEFT OUTER JOIN question USING (survey_id) LEFT OUTER JOIN option_choice USING (question_id)";
+		String sql = "SELECT  * FROM survey LEFT OUTER JOIN question USING (survey_id) LEFT OUTER JOIN option_choice USING (type_name)";
 		RowMapper<Question> mapper = new QuestionRowMapper();
 		List<Question> questions = jdbcTemplate.query(sql, mapper);
 
@@ -32,7 +32,7 @@ public class QuestionDAOSpringJdbcImpl implements QuestionDAO {
 	}
 	
 	public List<Question> allQuestions(){
-		String sql = "SELECT  * FROM survey LEFT OUTER JOIN question USING (survey_id) LEFT OUTER JOIN option_choice USING (question_id)";
+		String sql = "SELECT  * FROM survey LEFT OUTER JOIN question USING (survey_id) LEFT OUTER JOIN option_choice USING (type_name)";
 		//QuestionExtractor extractor = new QuestionExtractor();
 		//List<Question> questions = jdbcTemplate.query(sql, extractor);
 

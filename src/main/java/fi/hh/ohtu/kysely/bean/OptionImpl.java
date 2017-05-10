@@ -12,6 +12,7 @@ public class OptionImpl implements Option {
 	public void setOption_id(int option_id) {
 		this.option_id = option_id;
 	}
+	
 	public String getType_name() {
 		return type_name;
 	}
@@ -24,6 +25,7 @@ public class OptionImpl implements Option {
 	public void setOptionchoice(String optionchoice) {
 		this.optionchoice = optionchoice;
 	}
+	
 	
 	@Override
 	public String toString() {
