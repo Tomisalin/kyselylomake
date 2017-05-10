@@ -27,7 +27,7 @@ public class SurveyController {
 		this.dao = dao;
 	}
 
-	@RequestMapping(value="/{topic_name}.json", method=RequestMethod.GET)
+	@RequestMapping(value="/{topic_name}", method=RequestMethod.GET)
 	@ResponseBody
 	public Survey getSurvey(@PathVariable("topic_name") String topic_name) {
 		Survey survey = dao.getSurvey(topic_name);

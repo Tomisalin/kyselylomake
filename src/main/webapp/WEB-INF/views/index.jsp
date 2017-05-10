@@ -11,7 +11,9 @@
 <a href="lomake/ruokailu">Dining Form</a>
 
 <h2>Kyselyiden haku JSON GET</h2>
-<b>http://proto317.haaga-helia.fi:8080/kysely/kysymykset/kysely.json</b>
+<b>http://proto317.haaga-helia.fi:8080/kysely/kysymykset/?</b>
+<p> ? tuossa linkissä on topic_name eli esim. Ruokailu, Ainejärjestöt jne. </p>
+
 
 <div style="word-wrap: break-word; white-space: -moz-pre-wrap; white-space: pre-wrap; ">
 {
