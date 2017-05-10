@@ -2,7 +2,6 @@ package fi.hh.ohtu.kysely.bean;
 
 import java.util.ArrayList;
 
-
 public class QuestionImpl implements Question {
 	
 	private int question_id;
@@ -10,8 +9,6 @@ public class QuestionImpl implements Question {
 	private String type_name;
 	private String question;
 	private ArrayList<Option> options= new ArrayList<Option>();
-	
-
 	
 	public int getQuestion_id() {
 		return question_id;
@@ -60,7 +57,6 @@ public class QuestionImpl implements Question {
 		this.survey_id = survey_id;
 		this.type_name = type_name;
 		this.question = question;
-
 	}
 	
 	@Override
@@ -72,7 +68,4 @@ public class QuestionImpl implements Question {
 	public QuestionImpl() {
 		super();
 	}
-	
-	
-	
 }

@@ -1,7 +1,5 @@
 package fi.hh.ohtu.kysely.dao;
 
-
-
 import javax.inject.Inject;
 
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,5 +28,4 @@ public class SurveyDAOSpringJdbcImpl implements SurveyDAO {
 		Object [] args = new Object[] {topic_name};
 		return jdbcTemplate.query(sql,args, new SurveyExtractor());
 	}
-
 }

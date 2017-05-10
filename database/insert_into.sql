@@ -20,11 +20,11 @@ VALUES
 
 INSERT INTO question_type
 	(type_name)
-VALUES ('Multichoice');
+VALUES ('multichoice');
 
 INSERT INTO question_type
 	(type_name)
-VALUES ('Textbox');
+VALUES ('textbox');
 
 INSERT INTO question_type
 	(type_name)

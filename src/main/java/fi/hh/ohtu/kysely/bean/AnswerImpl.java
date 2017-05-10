@@ -59,5 +59,4 @@ public class AnswerImpl implements Answer {
 	public AnswerImpl() {
 	
 	}
-
 }

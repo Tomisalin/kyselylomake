@@ -12,6 +12,4 @@ public interface Survey {
 	public abstract void setTopic_name(String topic_name);
 	
 	public void add(Question question);
-	
-	
 }

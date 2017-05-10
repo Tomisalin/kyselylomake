@@ -6,12 +6,9 @@ import javax.inject.Inject;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import fi.hh.ohtu.kysely.bean.Answer;
 import fi.hh.ohtu.kysely.bean.AnswerImpl;
@@ -31,20 +28,10 @@ public class AnswerController {
 	public void setDao(AnswerDAO dao) {
 		this.dao = dao;
 	}
-
-	/*@RequestMapping(value="vastaus", method = RequestMethod.POST)
-	public Answer saveAnswer(@RequestBody Answer a) {
-	
-		Answer answer = dao.saveAnswer(a);
-	
-		return answer;
-	}*/
 	
 	@RequestMapping(value="vastaus", method=RequestMethod.POST)
 	public ResponseEntity<Answer> createAnswer( @RequestBody AnswerImpl answer) {
-		dao.saveAllA();
+		dao.saveAnswer(answer);
 		return new ResponseEntity<Answer>(answer, HttpStatus.OK);
 	}
-	
-
 }

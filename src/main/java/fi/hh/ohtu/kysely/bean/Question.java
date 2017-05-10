@@ -15,6 +15,4 @@ public interface Question {
 	public abstract void setQuestion(String question);
 	
 	public abstract void add(Option option); 
-
-	
 }

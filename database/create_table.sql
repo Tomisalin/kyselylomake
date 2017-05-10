@@ -30,27 +30,15 @@ FOREIGN KEY (type_name) REFERENCES question_type (type_name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE answer (
-answer_id 		INT NOT NULL AUTO_INCREMENT PRIMARY KEY
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE answer_text (
-answer_id 	INT NOT NULL,
+answer_id 		INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 answer_text 	VARCHAR(255),
-question_id 	INT NOT NULL,
-FOREIGN KEY (answer_id) REFERENCES answer (answer_id),
-FOREIGN KEY (question_id) REFERENCES question (question_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE answer_multichoice (
-answer_id 		INT NOT NULL,
 option_id	 	INT,
 question_id 	INT NOT NULL,
 FOREIGN KEY (option_id) REFERENCES option_choice (option_id),
-FOREIGN KEY (answer_id) REFERENCES answer (answer_id),
 FOREIGN KEY (question_id) REFERENCES question (question_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-DROP TABLE answer_multichoice, answer_text, answer, option_choice, question, question_type, survey, topic;
+DROP TABLE answer, option_choice, question, question_type, survey, topic;
 
 
 CREATE TABLE user (

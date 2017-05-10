@@ -18,5 +18,4 @@ public class QuestionRowMapper implements RowMapper<Question> {
 		q.setQuestion(rs.getString("question"));
 		return q;	
 	}
-
 }

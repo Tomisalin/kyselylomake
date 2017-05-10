@@ -9,7 +9,6 @@ public class SurveyImpl implements Survey {
 	private String topic_name;
 	private ArrayList<Question> questions= new ArrayList<Question>();
 	
-	
 	public int getSurvey_id() {
 		return survey_id;
 	}
@@ -57,14 +56,4 @@ public class SurveyImpl implements Survey {
 	public SurveyImpl() {
 		super();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

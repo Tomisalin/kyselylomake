@@ -17,9 +17,6 @@ public class AnswerRowMapper implements RowMapper<Answer> {
 		a.setOption_id(rs.getInt("option_id"));
 		a.setAnswer_text(rs.getString("answer_text"));
 		return a;
-		
-		
+	
 	}
-
 }
- 

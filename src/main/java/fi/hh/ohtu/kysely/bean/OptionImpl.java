@@ -37,8 +37,5 @@ public class OptionImpl implements Option {
 		this.option_id = option_id;
 		this.type_name = type_name;
 		this.optionchoice = optionchoice;
-	}
-	
-	
-	
+	}	
 }

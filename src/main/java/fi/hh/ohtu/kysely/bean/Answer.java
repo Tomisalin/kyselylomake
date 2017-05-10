@@ -1,7 +1,6 @@
 package fi.hh.ohtu.kysely.bean;
 
 public interface Answer {
-
 	
 		public abstract int getAnswer_id();
 		public abstract void setAnswer_id(int answer_id);
@@ -14,7 +13,4 @@ public interface Answer {
 		
 		public abstract String getAnswer_text();
 		public abstract void setAnswer_text(String answer_text);
-		
-		
-		
 }

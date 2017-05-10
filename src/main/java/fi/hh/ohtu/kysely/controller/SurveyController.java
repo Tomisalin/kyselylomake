@@ -1,7 +1,5 @@
 package fi.hh.ohtu.kysely.controller;
 
-
-
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
