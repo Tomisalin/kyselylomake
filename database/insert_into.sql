@@ -16,6 +16,14 @@ INSERT INTO question_type
 	(type_name)
 VALUES ('Textbox');
 
+INSERT INTO question_type
+	(type_name)
+VALUES ('yesno');
+
+INSERT INTO question_type
+	(type_name)
+VALUES ('onetofive');
+
 
 
 INSERT INTO question 
@@ -24,41 +32,41 @@ VALUES (1,1, 'Textbox', 'Arvioi viikon ruoat omin sanoin');
 
 INSERT INTO question 
 	(question_id, survey_id, type_name, question)
-VALUES (2,1, 'Multichoice', 'Oliko ruoka hyv‰‰ t‰n‰‰n?');
+VALUES (2,1, 'yesno', 'Oliko ruoka hyv‰‰ t‰n‰‰n?');
 
 INSERT INTO question 
 	(question_id, survey_id, type_name, question)
-VALUES (3,1, 'Multichoice', 'Arvioi tiistain ruoka (1-5)');
+VALUES (3,1, 'onetofive', 'Arvioi tiistain ruoka (1-5)');
 
 
 
 
 INSERT INTO option_choice
-	(option_id, question_id, optionchoice)
-VALUES (1, 2,'Kyll‰');
+	(option_id, type_name, optionchoice)
+VALUES (1,'yesno','Kyll‰');
 
 INSERT INTO option_choice
-	(option_id, question_id, optionchoice)
-VALUES (2, 2,'Ei');
+	(option_id, type_name, optionchoice)
+VALUES (2, 'yesno','Ei');
 
 INSERT INTO option_choice
-	(option_id, question_id, optionchoice)
-VALUES (3, 3,1);
+	(option_id, type_name, optionchoice)
+VALUES (3, 'onetofive',1);
 
 INSERT INTO option_choice
-	(option_id, question_id, optionchoice)
-VALUES (4, 3,2);
+	(option_id, type_name, optionchoice)
+VALUES (4, 'onetofive',2);
 
 INSERT INTO option_choice
-	(option_id, question_id, optionchoice)
-VALUES (5, 3,3);
+	(option_id, type_name, optionchoice)
+VALUES (5, 'onetofive',3);
 
 INSERT INTO option_choice
-	(option_id, question_id, optionchoice)
-VALUES (6, 3,4);
+	(option_id, type_name, optionchoice)
+VALUES (6, 'onetofive',4);
 
 
 INSERT INTO option_choice
-	(option_id, question_id, optionchoice)
-VALUES (7, 3,5);
+	(option_id, type_name, optionchoice)
+VALUES (7, 'onetofive',5);
 

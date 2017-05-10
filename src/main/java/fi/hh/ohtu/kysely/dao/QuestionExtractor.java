@@ -31,7 +31,7 @@ public class QuestionExtractor implements ResultSetExtractor<List<Question>> {
 			}
 			typename = rs.getString("type_name");
 			if(typename.equals("Multichoice")){
-			Option option = new OptionImpl(rs.getInt("option_id"), rs.getInt("question_id"),rs.getString("optionchoice"));
+			Option option = new OptionImpl(rs.getInt("option_id"), rs.getString("type_name"),rs.getString("optionchoice"));
 			question.add(option);
 			}
 		}

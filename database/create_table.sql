@@ -24,9 +24,9 @@ FOREIGN KEY (type_name) REFERENCES question_type (type_name)
 
 CREATE TABLE option_choice (
 option_id 		INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-question_id 	INT NOT NULL,
+type_name 		VARCHAR(255) NOT NULL,
 optionchoice 	VARCHAR(255),
-FOREIGN KEY (question_id) REFERENCES question (question_id)
+FOREIGN KEY (type_name) REFERENCES question_type (type_name)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE answer (
