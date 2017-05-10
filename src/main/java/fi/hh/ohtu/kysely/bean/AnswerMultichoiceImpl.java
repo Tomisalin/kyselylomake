@@ -4,6 +4,8 @@ public class AnswerMultichoiceImpl extends AnswerImpl {
 	
 	private int option_id;
 	private int question_id;
+	
+	
 	public int getOption_id() {
 		return option_id;
 	}

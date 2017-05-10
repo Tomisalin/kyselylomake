@@ -4,6 +4,8 @@ public class AnswertextImpl extends AnswerImpl {
 
 	private String answer_text;
 	private int question_id;
+	
+	
 	public String getAnswer_text() {
 		return answer_text;
 	}

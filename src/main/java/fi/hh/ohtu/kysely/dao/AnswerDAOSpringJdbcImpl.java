@@ -3,16 +3,19 @@ package fi.hh.ohtu.kysely.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.inject.Inject;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import fi.hh.ohtu.kysely.bean.Answer;
+
 @Repository
 public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 	
@@ -29,9 +32,11 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 	}
 
 	
-	public Answer saveAnswer(Answer a) {
+	public List<Answer> saveAllA() {
 		final String sql = "insert into answer (answer_id, option_id ,answer_text, question_id) values(?,?,?,?)";
-		
+	    RowMapper<Answer> mapper = new AnswerRowMapper();
+		List<Answer> answers = jdbcTemplate.query(sql, mapper);
+		Answer a = null;
 		
 		final int answer_id = a.getAnswer_id();
 		final int option_id = a.getOption_id();
@@ -57,6 +62,7 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 	    
 	
 	    a.setAnswer_id(idHolder.getKey().intValue());
-		return a;
+
+		return answers;
 	}
 }

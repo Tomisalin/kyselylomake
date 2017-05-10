@@ -42,7 +42,7 @@ public class AnswerController {
 	
 	@RequestMapping(value="vastaus", method=RequestMethod.POST)
 	public ResponseEntity<Answer> createAnswer( @RequestBody AnswerImpl answer) {
-		dao.saveAnswer(answer);
+		dao.saveAllA();
 		return new ResponseEntity<Answer>(answer, HttpStatus.OK);
 	}
 	

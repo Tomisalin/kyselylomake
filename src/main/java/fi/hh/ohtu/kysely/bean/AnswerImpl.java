@@ -1,12 +1,15 @@
 package fi.hh.ohtu.kysely.bean;
 
+import java.util.ArrayList;
+
+
 public class AnswerImpl implements Answer {
 	
 	private int answer_id;
 	private int question_id;
 	private int option_id;
 	private String answer_text;
-	
+	private ArrayList<Answer> answers= new ArrayList<Answer>();
 	
 	public int getAnswer_id() {
 		return answer_id;
@@ -32,11 +35,18 @@ public class AnswerImpl implements Answer {
 	public void setAnswer_text(String answer_text) {
 		this.answer_text = answer_text;
 	}
+	public ArrayList<Answer> getAnswers() {
+		return answers;
+	}
+	public void setAnswers(ArrayList<Answer> answers) {
+		this.answers = answers;
+	}
+	
 	@Override
 	public String toString() {
 		return "AnswerImpl [answer_id=" + answer_id + ", question_id="
 				+ question_id + ", option_id=" + option_id + ", answer_text="
-				+ answer_text + "]";
+				+ answer_text + ", answers=" + answers + "]";
 	}
 	public AnswerImpl(int answer_id, int question_id, int option_id,
 			String answer_text) {
@@ -49,8 +59,5 @@ public class AnswerImpl implements Answer {
 	public AnswerImpl() {
 	
 	}
-	
-	
-	
 
 }
