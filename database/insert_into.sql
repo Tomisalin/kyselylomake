@@ -38,7 +38,7 @@ VALUES ('onetofive');
 
 INSERT INTO question 
 	(question_id, survey_id, type_name, question)
-VALUES (1,1, 'Textbox', 'Arvioi viikon ruoat omin sanoin');
+VALUES (1,1, 'textbox', 'Arvioi viikon ruoat omin sanoin');
 
 INSERT INTO question 
 	(question_id, survey_id, type_name, question)
