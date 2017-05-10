@@ -2,11 +2,21 @@ INSERT INTO topic
 	(topic_name)
 VALUES 
 	('Ruokailu');
+	
+INSERT INTO topic
+	(topic_name)
+VALUES
+	('Ainejärjestö');
 
 INSERT INTO survey 
 	(survey_id, survey_name , topic_name)
 VALUES
 	(1,'Ruokailu toukokuussa 2017','Ruokailu');
+	
+INSERT INTO survey 
+	(survey_id, survey_name , topic_name)
+VALUES
+	(2,'Ainejärjestö esimerkki kysely','Ainejärjestö');
 
 INSERT INTO question_type
 	(type_name)
@@ -37,6 +47,10 @@ VALUES (2,1, 'yesno', 'Oliko ruoka hyvää tänään?');
 INSERT INTO question 
 	(question_id, survey_id, type_name, question)
 VALUES (3,1, 'onetofive', 'Arvioi tiistain ruoka (1-5)');
+
+INSERT INTO question 
+	(question_id, survey_id, type_name, question)
+VALUES (4,2, 'yesno', 'Tekevätkö ainejärjestöt hyvää työtä?');
 
 
 
