@@ -4,17 +4,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import fi.hh.ohtu.kysely.bean.Answer;
 import fi.hh.ohtu.kysely.bean.AnswerImpl;
+import fi.hh.ohtu.kysely.bean.Question;
 
 @Repository
 public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
@@ -86,4 +89,13 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 
 		return a;
 	}
+	
+	public List<Answer> findAllA() {
+		String sql = "select * from answer INNER JOIN option_choice USING (option_id)";
+		RowMapper<Answer> mapper = new AnswerRowMapper();
+		List<Answer> answers = jdbcTemplate.query(sql, mapper);
+
+		return answers;
+	}
+	
 }

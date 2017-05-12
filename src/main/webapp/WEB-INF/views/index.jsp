@@ -35,7 +35,7 @@
 </select>
 
 <br>
-<a href="vastauslista" >Kaikki vastaukset</a>
+<a href="vastaukset/vastauslista" >Kaikki vastaukset</a>
 
 
 <h2>Kyselyiden haku JSON GET</h2>

@@ -10,7 +10,7 @@
 <body>
 <c:forEach items="${answers}" var ="answer">
 <c:out value="${answer.answer_text}"></c:out>
-<c:out value="${option_choice.optionchoice}"></c:out>
+<c:out value="${answer.option_id}"></c:out>
 </c:forEach>
 </body>
 </html>
