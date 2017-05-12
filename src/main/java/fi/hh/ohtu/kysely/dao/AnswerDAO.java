@@ -7,6 +7,6 @@ import fi.hh.ohtu.kysely.bean.Answer;
 public interface AnswerDAO {
 	
 	public abstract Answer saveAnswer(Answer a);
-	public void saveAnswers(List<Answer> answers);
+	//public void saveAnswers(List<Answer> answers);
 
 }
