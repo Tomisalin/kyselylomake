@@ -112,23 +112,23 @@
 </div>
 
 <h2>Vastausten haku JSON POST - esimerkit multichoicelle ja tekstivastaukselle</h2>
-<b>http://proto317.haaga-helia.fi:8080/kysely/vastaukset/vastaus</b>
-<p>Huom: Tällä toteutuksella saa toistaiseksi lähetettyä vain yhden vastauksen kerrallaan.</p>
-
+<b>http://proto317.haaga-helia.fi:8080/kysely/vastaus/?</b>
+<p> ?= tässä sama kuin tuossa getissä </p>
+<p>Tämä toimii nyt kunnolla! Ja tämännäköistä JSONIA tarvitaan teiltä eli ArrayList</p>
 <div style="word-wrap: break-word; white-space: -moz-pre-wrap; white-space: pre-wrap; ">
+[{
+ "answer_id": "",			---- Tämä esimerkki monivalinta/kylläei/numeroskaala -kysymykseen , teksti voi olla tyhjä ja option id kertoo vastauksen
+ "option_id": 2,
+ "answer_text": "",
+ "question_id" : 2
+},
 {
-"answer_id": ?, <--- Laita tähän eri numeroita kunnes ei tule erroria
-"option_id": 2,
-"answer_text": "",
-"question_id" : 2
-}
+ "answer_id": "",			---- Tämä esimerkki textiboksiin, option_id 1 tarkoittaa AINA tekstiboksia, eli "Ei vaihtoehtoja" tätä ei voi jättää tyhjäksi.
+ "option_id": 1,
+ "answer_text": "JeeJee",
+ "question_id" : 3
 
-{
-"answer_id": ?, <--- Laita tähän eri numeroita kunnes ei tule erroria
-"option_id": 8,     (tällä hetkellä tietokannassa option_id: 8 tarkoittaa "ei vaihtoehtoja")
-"answer_text": "Ruoka oli erinomaista",
-"question_id" : 1
-}
+}]
 </div>
 
 </body>
