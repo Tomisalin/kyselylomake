@@ -16,4 +16,19 @@
 		org.springframework.web.context.ContextLoaderListener 
 	</listener-class> 
   </listener>
+  <filter>
+  <filter-name>RestCSRF</filter-name>
+  <filter-class>org.apache.catalina.filters.RestCsrfPreventionFilter</filter-class>
+  
+  <init-param>
+    <param-name>pathsAcceptingParams</param-name>
+    <param-value>/resources/removeResource,/resources/addResource</param-value>
+  </init-param>
+</filter>
+
+<filter-mapping>
+  <filter-name>RestCSRF</filter-name>
+  <url-pattern>/resources/*</url-pattern>
+</filter-mapping>
+
 </web-app>
