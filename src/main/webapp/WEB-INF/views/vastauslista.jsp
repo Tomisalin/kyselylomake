@@ -9,8 +9,12 @@
 </head>
 <body>
 <c:forEach items="${answers}" var ="answer">
-<c:out value="${answer.answer_text}"></c:out>
-<c:out value="${answer.option_id}"></c:out>
+<p>Vastaus id: <c:out value="${answer.answer_id}"></c:out></p>
+<p>Kysymys id: <c:out value="${answer.question_id}"></c:out></p>
+<p>Vastaus teksti: <c:out value="${answer.answer_text}"></c:out></p>
+<p>Vastaus id: <c:out value="${answer.option_id}"></c:out></p>
+<p>Vastaus valinta: <c:out value="${answer.optionchoice}"></c:out></p>
+<p>--------------------------------------------------------------</p>
 </c:forEach>
 </body>
 </html>

@@ -13,6 +13,7 @@ public class AnswerRowMapper implements RowMapper<Answer> {
 		
 		Answer a = new AnswerImpl();
 		
+		a.setAnswer_id(rs.getInt("answer_id"));
 		a.setQuestion_id(rs.getInt("question_id"));
 		a.setOption_id(rs.getInt("option_id"));
 		a.setAnswer_text(rs.getString("answer_text"));

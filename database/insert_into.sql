@@ -54,6 +54,51 @@ INSERT INTO question_type
 	(type_name)
 VALUES ('frequency');
 
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (1,'textbox','Ei vaihtoehtoja');
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (2, 'yesno','Kyll‰');
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (3, 'yesno','Ei');
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (4, 'onetofive',1);
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (5, 'onetofive',2);
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (6, 'onetofive',3);
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (7, 'onetofive',4);
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (8, 'frequency', 'Usein');
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (9, 'frequency', 'Joskus');
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (10, 'frequency', 'Harvoin');
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (11, 'frequency', 'En ole k‰ynyt');
+
+
 
 INSERT INTO question 
 	(question_id, survey_id, type_name, question)
@@ -205,49 +250,7 @@ INSERT INTO question
 VALUES (37, 4, 'textbox', 'Haluatko j‰tt‰‰ jotakin muuta palautetta? Kirjoita t‰nne viestisi!');
 
 
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (1,'textbox','Ei vaihtoehtoja');
 
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (2, 'yesno','Kyll‰');
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (3, 'yesno','Ei');
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (4, 'onetofive',1);
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (5, 'onetofive',2);
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (6, 'onetofive',3);
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (7, 'onetofive',4);
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (8, 'frequency', 'Usein');
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (9, 'frequency', 'Joskus');
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (10, 'frequency', 'Harvoin');
-
-INSERT INTO option_choice
-	(option_id, type_name, optionchoice)
-VALUES (11, 'frequency', 'En ole k‰ynyt');
 
 
 
