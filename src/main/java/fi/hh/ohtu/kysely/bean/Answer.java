@@ -13,4 +13,7 @@ public interface Answer {
 		
 		public abstract String getAnswer_text();
 		public abstract void setAnswer_text(String answer_text);
+		
+		public abstract String getOptionchoice();
+		public abstract void setOptionchoice(String optionchoice);
 }

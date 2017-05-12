@@ -116,19 +116,22 @@
 <p> ?= tässä sama kuin tuossa getissä </p>
 <p>Tämä toimii nyt kunnolla! Ja tämännäköistä JSONIA tarvitaan teiltä eli ArrayList</p>
 <div style="word-wrap: break-word; white-space: -moz-pre-wrap; white-space: pre-wrap; ">
-[{
- "answer_id": "",			---- Tämä esimerkki monivalinta/kylläei/numeroskaala -kysymykseen , teksti voi olla tyhjä ja option id kertoo vastauksen
- "option_id": 2,
- "answer_text": "",
- "question_id" : 2
+[
+{
+  "answer_id" : "",
+  "option_id": 2,
+  "answer_text" : "",
+  "question_id" : 4,
+  "optionchoice" : "Kyllä"
 },
 {
- "answer_id": "",			---- Tämä esimerkki textiboksiin, option_id 1 tarkoittaa AINA tekstiboksia, eli "Ei vaihtoehtoja" tätä ei voi jättää tyhjäksi.
- "option_id": 1,
- "answer_text": "JeeJee",
- "question_id" : 3
-
-}]
+  "answer_id" : "",
+  "option_id": 4,
+  "answer_text" : "",
+  "question_id" : 5,
+  "optionchoice" : "1"
+}
+]
 </div>
 
 </body>

@@ -34,13 +34,13 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 	}
 
 	public void saveAnswers(ArrayList<AnswerImpl> answers) {
-		final String sql = "insert into answer (answer_id, option_id ,answer_text, question_id) values(?,?,?,?)";
+		final String sql = "insert into answer (answer_id, option_id ,answer_text, question_id, optionchoice) values(?,?,?,?,?)";
 
 		int answer_id = 0;
 		int option_id = 0;
 		String answer_text = null;
 		int question_id = 0;
-		
+		String optionchoice=null;
 		Answer a = null;
 		
 		for (int i = 0; i < answers.size(); i++) {
@@ -50,9 +50,10 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 			option_id = a.getOption_id();
 			answer_text = a.getAnswer_text();
 			question_id = a.getQuestion_id();
+			optionchoice= a.getOptionchoice();
 
 			Object[] args = new Object[] { answer_id, option_id, answer_text,
-					question_id };
+					question_id, optionchoice };
 
 			jdbcTemplate.update(sql, args);
 		}
@@ -67,6 +68,7 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 		final int option_id = a.getOption_id();
 		final String answer_text = a.getAnswer_text();
 		final int question_id = a.getQuestion_id();
+		final String optionchoice= a.getOptionchoice();
 
 		KeyHolder idHolder = new GeneratedKeyHolder();
 
@@ -79,6 +81,7 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 				ps.setInt(2, option_id);
 				ps.setString(3, answer_text);
 				ps.setInt(4, question_id);
+				ps.setString(5, optionchoice);
 
 				;
 				return ps;

@@ -34,7 +34,8 @@ answer_id 		INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 answer_text 	VARCHAR(255),
 option_id	 	INT,
 question_id 	INT NOT NULL,
-FOREIGN KEY (option_id) REFERENCES option_choice (option_id),
+optionchoice    VARCHAR(255),
+FOREIGN KEY   (option_id) REFERENCES option_choice (option_id),
 FOREIGN KEY (question_id) REFERENCES question (question_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
