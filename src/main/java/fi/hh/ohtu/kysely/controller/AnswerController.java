@@ -1,9 +1,6 @@
 package fi.hh.ohtu.kysely.controller;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.springframework.http.HttpStatus;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import fi.hh.ohtu.kysely.bean.Answer;
 import fi.hh.ohtu.kysely.bean.AnswerImpl;
-import fi.hh.ohtu.kysely.bean.AnswerWrapper;
 import fi.hh.ohtu.kysely.dao.AnswerDAO;
 
 @Controller
@@ -33,12 +29,9 @@ public class AnswerController {
 		this.dao = dao;
 	}
 	
-	@RequestMapping(value="vastaus", method=RequestMethod.POST, consumes="application/json")
-	public List<String> saveAnswer( @RequestBody AnswerWrapper wrapper) {
-		List<String> response = new ArrayList<String>();
-		for (Answer answer : wrapper.getAnswers()){
-			dao.saveAnswer(answer);
-		}
-		return response;
+	@RequestMapping(value="vastaus", method=RequestMethod.POST)
+	public ResponseEntity<Answer> createAnswer( @RequestBody AnswerImpl answer) {
+		dao.saveAnswer(answer);
+		return new ResponseEntity<Answer>(answer, HttpStatus.OK);
 	}
 }

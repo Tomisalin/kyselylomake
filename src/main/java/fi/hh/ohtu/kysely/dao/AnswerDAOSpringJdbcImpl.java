@@ -29,7 +29,7 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-/*	public void saveAnswers(List<Answer> answers) {
+	public void saveAnswers(List<Answer> answers) {
 		final String sql = "insert into answer (answer_id, option_id ,answer_text, question_id) values(?,?,?,?)";
 
 		int answer_id = 0;
@@ -53,7 +53,7 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 			jdbcTemplate.update(sql, args);
 		}
 
-	}*/
+	}
 
 	public Answer saveAnswer(Answer a) {
 
