@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,8 +8,35 @@
 <title>School forms</title>
 </head>
 <body>
-<h1>Ruokailu kyselysettii</h1>
-<a href="lomake/ruokailu">Dining Form</a>
+<h1>Kysely info</h1>
+
+
+<select  name="aiheet">
+<c:forEach items="${topic}" var ="topic">
+<option value="${topic}">
+</option>
+</c:forEach>
+</select>
+<br>
+
+<select  name="kysely">
+<c:forEach items="${survey}" var="survey">
+<option value ="${survey.name}">
+</option>
+</c:forEach>
+</select>
+<br>
+
+<select  name="kysymys">
+<c:forEach items="${question}" var="question">
+<option value="${question.question}">
+</option>
+</c:forEach>
+</select>
+
+<br>
+<a href="vastauslista" >Kaikki vastaukset</a>
+
 
 <h2>Kyselyiden haku JSON GET</h2>
 <b>http://proto317.haaga-helia.fi:8080/kysely/kysymykset/?</b>
