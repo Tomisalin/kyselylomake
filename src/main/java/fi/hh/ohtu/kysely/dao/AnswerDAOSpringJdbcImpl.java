@@ -3,7 +3,7 @@ package fi.hh.ohtu.kysely.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.inject.Inject;
 
@@ -14,6 +14,7 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 import fi.hh.ohtu.kysely.bean.Answer;
+import fi.hh.ohtu.kysely.bean.AnswerImpl;
 
 @Repository
 public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
@@ -29,7 +30,7 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
-	public void saveAnswers(List<Answer> answers) {
+	public void saveAnswers(ArrayList<AnswerImpl> answers) {
 		final String sql = "insert into answer (answer_id, option_id ,answer_text, question_id) values(?,?,?,?)";
 
 		int answer_id = 0;
@@ -37,10 +38,10 @@ public class AnswerDAOSpringJdbcImpl implements AnswerDAO {
 		String answer_text = null;
 		int question_id = 0;
 		
+		Answer a = null;
 		
 		for (int i = 0; i < answers.size(); i++) {
-			
-			Answer a = null;
+			a = answers.get(i);
 			//haetaan listasta yksi vastaus "a"
 			answer_id = a .getAnswer_id();
 			option_id = a.getOption_id();

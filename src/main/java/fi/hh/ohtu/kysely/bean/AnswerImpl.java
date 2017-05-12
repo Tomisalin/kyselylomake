@@ -47,6 +47,6 @@ public class AnswerImpl implements Answer {
 		this.answer_text = answer_text;
 	}
 	public AnswerImpl() {
-	
+	super();
 	}
 }
