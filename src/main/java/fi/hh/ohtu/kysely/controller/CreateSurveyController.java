@@ -63,7 +63,7 @@ public class CreateSurveyController {
 		@RequestMapping(value="{survey_id}", method=RequestMethod.POST)
 		public String createQuestion(@ModelAttribute(value="question")QuestionImpl question) {
 				dao.saveQuestion(question);
-				return "addQuestion";
+				return "addQuestions";
 			}
 		
 	
