@@ -53,7 +53,7 @@ public class AnswerController {
 	public String getDetails(Model model){
 		List<Answer> answers = dao.findAllA();
 		model.addAttribute("answers", answers);
-		return "vastauslista";		
+		return "vastauslista";	
 	}
 	
 }

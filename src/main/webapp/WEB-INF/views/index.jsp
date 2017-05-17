@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://www.springframework.org/tags"  prefix="spring"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,34 +12,9 @@
 </head>
 <body>
 <h1>Kysely info</h1>
-
-
-<select  name="aiheet">
-<c:forEach items="${topic}" var ="topic">
-<option value="${topic}">
-</option>
-</c:forEach>
-</select>
-<br>
-
-<select  name="kysely">
-<c:forEach items="${survey}" var="survey">
-<option value ="${survey.name}">
-</option>
-</c:forEach>
-</select>
-<br>
-
-<select  name="kysymys">
-<c:forEach items="${question}" var="question">
-<option value="${question.question}">
-</option>
-</c:forEach>
-</select>
-
 <br>
 <a href="vastaukset/vastauslista" >Kaikki vastaukset</a>
-
+<a href="kysely/uusi">Lis‰‰ uusi kysely</a>
 
 <h2>Kyselyiden haku JSON GET</h2>
 <b>http://proto317.haaga-helia.fi:8080/kysely/kysymykset/?</b>
