@@ -37,9 +37,9 @@ public class SurveyDAOSpringJdbcImpl implements SurveyDAO {
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-
+	
 	public Survey getSurvey(String topic_name) {
-		String sql = "SELECT * FROM survey LEFT OUTER JOIN question USING (survey_id) LEFT OUTER JOIN question_type USING (type_name) LEFT OUTER JOIN  option_choice USING (type_name) where topic_name=?";
+		String sql = "SELECT * FROM survey LEFT OUTER JOIN question USING (survey_id) LEFT OUTER JOIN question_type USING (type_name) LEFT OUTER JOIN  option_choice USING (type_name) WHERE survey_id IN (SELECT MAX (survey_id) as survey_id FROM survey where topic_name=? GROUP BY topic_name)";
 		Object [] args = new Object[] {topic_name};
 		return jdbcTemplate.query(sql,args, new SurveyExtractor());
 	}

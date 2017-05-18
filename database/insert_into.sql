@@ -84,19 +84,23 @@ VALUES (7, 'onetofive',4);
 
 INSERT INTO option_choice
 	(option_id, type_name, optionchoice)
-VALUES (8, 'frequency', 'Usein');
+VALUES (8, 'onetofive',5);
 
 INSERT INTO option_choice
 	(option_id, type_name, optionchoice)
-VALUES (9, 'frequency', 'Joskus');
+VALUES (9, 'frequency', 'Usein');
 
 INSERT INTO option_choice
 	(option_id, type_name, optionchoice)
-VALUES (10, 'frequency', 'Harvoin');
+VALUES (10, 'frequency', 'Joskus');
 
 INSERT INTO option_choice
 	(option_id, type_name, optionchoice)
-VALUES (11, 'frequency', 'En ole käynyt');
+VALUES (11, 'frequency', 'Harvoin');
+
+INSERT INTO option_choice
+	(option_id, type_name, optionchoice)
+VALUES (12, 'frequency', 'En ole käynyt');
 
 
 
@@ -248,14 +252,4 @@ VALUES (36, 3, 'frequency', 'Löydän tietoa tapahtumista helposti');
 INSERT INTO question
 	(question_id, survey_id, type_name, question)
 VALUES (37, 4, 'textbox', 'Haluatko jättää jotakin muuta palautetta? Kirjoita tänne viestisi!');
-
-
-
-
-
-
-
-
-
-
 
